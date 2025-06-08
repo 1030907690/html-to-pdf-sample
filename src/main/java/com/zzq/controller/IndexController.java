@@ -1,6 +1,7 @@
 package com.zzq.controller;
 
 
+import cn.hutool.core.io.FileUtil;
 import cn.hutool.core.lang.Dict;
 import cn.hutool.extra.template.Template;
 import cn.hutool.extra.template.TemplateConfig;
@@ -48,7 +49,9 @@ public class IndexController {
 */
         FileOutputStream fileOutputStream = null;
         try {
-            fileOutputStream = new FileOutputStream("a.pdf");
+            String filePath = FileUtil.getTmpDirPath() + System.currentTimeMillis() + ".pdf";
+            log.info("文件 {} ", filePath);
+            fileOutputStream = new FileOutputStream(filePath);
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
         }
