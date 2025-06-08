@@ -1,0 +1,62 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <style>
+        .center_div {
+            border: 1px solid #404e94;
+            margin-left: auto;
+            margin-right: auto;
+            background-color: #f6d0ed;
+            text-align: left;
+            padding: 8px;
+        }
+
+        table {
+            width: 100%;
+            border: 1px solid black;
+        }
+
+        th, td {
+            border: 1px solid black;
+        }
+
+        body, html, input {
+            font-family: "AlibabaPuHuiTi";
+        }
+    </style>
+</head>
+<body>
+<div class="center_div">
+    <h1>Hello ${name}</h1>
+    <div>
+        <p>convert html to pdf.</p>
+    </div>
+    <div>
+        <table>
+            <thead>
+            <th>id</th>
+            <th>名称</th>
+            <th>年龄</th>
+            </thead>
+            <tbody>
+            <tr>
+                <td>1</td>
+                <td>张三</td>
+                <td>11</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>lisi</td>
+                <td>22</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>王五</td>
+                <td>33</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
+</html>
