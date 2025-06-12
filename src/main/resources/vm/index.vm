@@ -32,6 +32,7 @@
         <p>convert html to pdf.</p>
     </div>
     <div>
+        <img src="${image}"/>
         <table>
             <thead>
             <th>id</th>

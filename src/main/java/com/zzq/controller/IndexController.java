@@ -1,7 +1,9 @@
 package com.zzq.controller;
 
 
+import cn.hutool.core.codec.Base64Encoder;
 import cn.hutool.core.io.FileUtil;
+import cn.hutool.core.io.IoUtil;
 import cn.hutool.core.lang.Dict;
 import cn.hutool.extra.template.Template;
 import cn.hutool.extra.template.TemplateConfig;
@@ -39,7 +41,10 @@ public class IndexController {
     @GetMapping("/pdf")
     public String pdf(HttpServletResponse response) {
         Template template = engine.getTemplate("index.vm");
-        String result = template.render(Dict.create().set("name", "openhtmltopdf"));
+
+        String imageBase64 = "data:image/png;base64,"+ Base64Encoder.encode(FileUtil.readBytes("C:\\Users\\Administrator\\Pictures\\sc.png"));
+        log.info("imageBase64 {} ",imageBase64);
+        String result = template.render(Dict.create().set("name", "openhtmltopdf").set("image",imageBase64));
         /*OutputStream os = null;
         try {
             os = response.getOutputStream();
